@@ -14,7 +14,34 @@
       body {
         font-family: monospace;
         font-size: large;
+        color: aliceblue;
+        background-color: rgb(40, 39, 42);
+      }
+      h1 {
         text-align: center;
+      }
+      h2 {
+        font-size: small;
+        text-transform: uppercase;
+        color: rgb(189, 108, 189);
+      }
+      p {
+        color: cornflowerblue;
+        font-size: 11px;
+        letter-spacing: 1px;
+        line-height: 15px;
+      }
+      code {
+        font-weight: bold;
+        color: rgb(180, 41, 41);
+        background-color: rgb(43, 43, 43);
+        padding: 0 5px;
+        border: 1px solid rgb(76, 76, 76);
+        border-radius: 3px;
+      }
+      span {
+        color: rgb(215, 226, 246);
+        font-style: italic;
       }
     </style>
     <title>Rock Paper Scissors</title>
@@ -23,5 +50,26 @@
     <header>
       <h1>Rock Paper Scissors</h1>
     </header>
+    <h2>step 1</h2>
+    <p>
+      game is going to play against the computer, so begin with a
+      <span>function</span> called <code>getComputerChoice</code> that
+      <span>will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.</span>
+      We’ll use this function in the game to make the computer’s play.
+    </p>
+    <br />
+    <h2>step 2</h2>
+    <p>
+      Write a function that plays a single round of Rock Paper Scissors. The
+      <span>function should take two parameters</span> - the
+      <code>playerSelection</code> and <code>computerSelection</code> - and
+      <span
+        >then return a string that declares the winner of the round like so:
+        "You Lose! Paper beats Rock".</span
+      >
+      Make your <span>function’s</span> <code>playerSelection</code>
+      <span>parameter case-insensitive</span> (so users can input rock, ROCK,
+      RocK or any other variation).
+    </p>
   </body>
 </html>
