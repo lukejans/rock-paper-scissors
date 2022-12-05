@@ -16,7 +16,16 @@ function game() {
 function playRound(playerSelection, computerSelection) {
   playerSelection = getPlayerChoice();
   computerSelection = getComputerChoice();
-  console.log(checkWinner(playerSelection, computerSelection));
+  let winner = checkWinner(playerSelection, computerSelection);
+  if (winner == 'you win this round! \\ (•◡•) /') {
+    console.log(`${playerSelection} beats ${computerSelection}, ${winner}`);
+  } else if (winner == 'you lost, computer wins this round! ¯\\_(ツ)_/¯') {
+    console.log(`${computerSelection} beats ${playerSelection}, ${winner}`);
+  } else {
+    console.log(
+      `${playerSelection} vs. ${computerSelection} results in a ${winner}`
+    );
+  }
 }
 
 // player choice
@@ -54,7 +63,7 @@ function getComputerChoice() {
 // rules
 function checkWinner(p, c) {
   if (p === c) {
-    return 'round ends in a draw...';
+    return 'round draw...';
   } else if (
     (p === 'rock' && c === 'scissors') ||
     (p === 'paper' && c === 'rock') ||
