@@ -3,14 +3,29 @@ const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
 
+// start button
+
 // game
 function game() {
-  for (let i = 0; i < 5; i++) {
+  for (player, computer; player < 5, computer < 5; ) {
     playRound();
-    console.log(`scores --->  player: ${player} -- computer: ${computer}`);
-    console.log('------------------------------------------------------');
+    console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
+  }
+  if (player == 5 || computer == 5) {
+    console.log(winnerText());
+    console.log('-------------------');
+    player = 0;
+    computer = 0;
   }
 }
+// win / loose text
+const winnerText = () => {
+  if (player > computer) {
+    return 'Congratulations! You won the game';
+  } else {
+    return 'Oops! You lost this time';
+  }
+};
 
 // round
 function playRound(playerSelection, computerSelection) {
@@ -28,7 +43,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// player choice
+// get player choice
 function getPlayerChoice() {
   let input = prompt('pick rock, paper or scissors! ');
   while (input == null) {
@@ -45,6 +60,7 @@ function getPlayerChoice() {
     input = input.toLowerCase();
     check = validateInput(input);
   }
+  console.log(' ');
   console.log(`player picks: ${input}`);
   return input;
 }
@@ -53,7 +69,7 @@ function validateInput(choice) {
   return choices.includes(choice);
 }
 
-// computer choice
+// get computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
   console.log(`computer picks: ${choices[randomNum]}`);
@@ -74,6 +90,7 @@ function checkWinner(p, c) {
     return playerLoses();
   }
 }
+// win tracker
 const playerWins = () => {
   player++;
   return 'you win this round! \\ (•◡•) /';
@@ -82,6 +99,3 @@ const playerLoses = () => {
   computer++;
   return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
 };
-
-// start / call on game function
-game();
