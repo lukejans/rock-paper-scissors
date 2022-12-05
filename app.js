@@ -7,10 +7,12 @@ function game() {
 }
 
 // round
-function playRound(playerSelection, computerSelection) {}
-
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) {
+  const winner = checkWinner(playerSelection, computerSelection);
+  console.log(winner);
+}
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
 
 // player choice
 function getPlayerChoice() {
@@ -29,7 +31,8 @@ function getPlayerChoice() {
   }
   return input.toLowerCase();
 }
-console.log(`player picks: ${playerSelection}`);
+// console.log(`player picks: ${playerSelection}`);
+
 // validate input
 function validateInput(choice) {
   return choices.includes(choice);
@@ -40,7 +43,22 @@ function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
   return choices[randomNum];
 }
-console.log(`computer picks: ${computerSelection}`);
+// console.log(`computer picks: ${computerSelection}`);
+
+// rules
+function checkWinner(a, b) {
+  if (a === b) {
+    return 'tie';
+  } else if (
+    (a === 'rock' && b === ' scissors') ||
+    (a === 'paper' && b === 'rock') ||
+    (a === 'scissors' && b === 'paper')
+  ) {
+    return 'player';
+  } else {
+    return 'computer';
+  }
+}
 
 // game
 game();
