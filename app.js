@@ -1,4 +1,5 @@
 // variables
+const choices = ['rock', 'paper', 'scissors'];
 
 // game
 function game() {
@@ -12,24 +13,40 @@ const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 // player choice
-function getPlayerChoice(playerAnswer) {
-  while (playerAnswer == null) {
-    playerAnswer = prompt('pick rock, paper or scissors? ');
+function getPlayerChoice() {
+  let input = prompt('pick rock, paper or scissors? ');
+  while (input == null) {
+    input = prompt('pick rock, paper or scissors? ');
   }
-  return playerAnswer.toLowerCase();
+  input = input.toLowerCase();
+  let check = validateInput(input);
+  while (check == false) {
+    input = prompt('must choose rock, paper or scissors!');
+    if (input !== null) {
+      input = input.toLowerCase();
+    }
+    check = validateInput(input);
+  }
+  console.log(`player picks: ${input}`);
 }
-
-console.log(playerSelection);
+// validate input
+function validateInput(choice) {
+  return choices.includes(choice);
+}
 
 // computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
-  return choices[randomNum];
+  return `computer picks: ${choices[randomNum]}`;
 }
-
-const choices = ['rock', 'paper', 'scissors'];
 console.log(computerSelection);
 
+// game
+game();
+
+// let player = 0;
+// let computer = 0;
+//
 // const playerWins = () => {
 //   player++;
 //   playerScore.innerText = player;
