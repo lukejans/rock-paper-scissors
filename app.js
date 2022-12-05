@@ -83,5 +83,5 @@ const playerLoses = () => {
   return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
 };
 
-// game
+// start / call on game function
 game();
