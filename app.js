@@ -37,9 +37,9 @@ function validateInput(choice) {
 // computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
-  return `computer picks: ${choices[randomNum]}`;
+  return choices[randomNum];
 }
-console.log(computerSelection);
+console.log(`computer picks: ${computerSelection}`);
 
 // game
 game();
