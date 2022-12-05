@@ -5,22 +5,24 @@ let computer = 0;
 
 // game
 function game() {
-  playRound();
+  for (let i = 0; i < 5; i++) {
+    playRound();
+    console.log(`scores --->  player: ${player} -- computer: ${computer}`);
+  }
 }
 
 // round
 function playRound(playerSelection, computerSelection) {
   playerSelection = getPlayerChoice();
   computerSelection = getComputerChoice();
-  const winner = checkWinner(playerSelection, computerSelection);
-  console.log(winner);
+  console.log(checkWinner(playerSelection, computerSelection));
 }
 
 // player choice
 function getPlayerChoice() {
-  let input = prompt('pick rock, paper or scissors? ');
+  let input = prompt('pick rock, paper or scissors! ');
   while (input == null) {
-    input = prompt('pick rock, paper or scissors? ');
+    input = prompt('pick rock, paper, scissors or die! ');
   }
   input = input.toLowerCase();
   let check = validateInput(input);
@@ -35,8 +37,6 @@ function getPlayerChoice() {
   }
   return input;
 }
-// console.log(`player picks: ${playerSelection}`);
-
 // validate input
 function validateInput(choice) {
   return choices.includes(choice);
@@ -47,7 +47,6 @@ function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
   return choices[randomNum];
 }
-// console.log(`computer picks: ${computerSelection}`);
 
 // rules
 function checkWinner(p, c) {
