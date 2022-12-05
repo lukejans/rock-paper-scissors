@@ -74,18 +74,3 @@ const playerLoses = () => {
 
 // game
 game();
-
-// let player = 0;
-// let computer = 0;
-//
-// const playerWins = () => {
-//   player++;
-//   playerScore.innerText = player;
-//   console.log(`Won Round! ${playerSelection} beats ${computerSelection}`);
-// };
-
-// const playerLoses = () => {
-//   computer++;
-//   cpuScore.innerText = computer;
-//   console.log(`Lost Round! ${computerSelection} beats ${playerSelection}`);
-// };
