@@ -24,6 +24,7 @@ function getPlayerChoice() {
   let check = validateInput(input);
   while (check == false) {
     input = prompt('must choose rock, paper or scissors!');
+
     while (input == null) {
       input = prompt('must choose rock, paper or scissors!');
     }
@@ -47,13 +48,13 @@ function getComputerChoice() {
 // console.log(`computer picks: ${computerSelection}`);
 
 // rules
-function checkWinner(a, b) {
-  if (a === b) {
+function checkWinner(p, c) {
+  if (p === c) {
     return 'tie';
   } else if (
-    (a === 'rock' && b === ' scissors') ||
-    (a === 'paper' && b === 'rock') ||
-    (a === 'scissors' && b === 'paper')
+    (p === 'rock' && c === 'scissors') ||
+    (p === 'paper' && c === 'rock') ||
+    (p === 'scissors' && c === 'paper')
   ) {
     return 'player';
   } else {
