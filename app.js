@@ -8,11 +8,11 @@ function game() {
 
 // round
 function playRound(playerSelection, computerSelection) {
+  playerSelection = getPlayerChoice();
+  computerSelection = getComputerChoice();
   const winner = checkWinner(playerSelection, computerSelection);
   console.log(winner);
 }
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
 
 // player choice
 function getPlayerChoice() {
@@ -24,12 +24,13 @@ function getPlayerChoice() {
   let check = validateInput(input);
   while (check == false) {
     input = prompt('must choose rock, paper or scissors!');
-    if (input !== null) {
-      input = input.toLowerCase();
+    while (input == null) {
+      input = prompt('must choose rock, paper or scissors!');
     }
+    input = input.toLowerCase();
     check = validateInput(input);
   }
-  return input.toLowerCase();
+  return input;
 }
 // console.log(`player picks: ${playerSelection}`);
 
