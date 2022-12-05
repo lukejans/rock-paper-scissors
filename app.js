@@ -8,6 +8,7 @@ function game() {
   for (let i = 0; i < 5; i++) {
     playRound();
     console.log(`scores --->  player: ${player} -- computer: ${computer}`);
+    console.log('------------------------------------------------------');
   }
 }
 
@@ -35,6 +36,7 @@ function getPlayerChoice() {
     input = input.toLowerCase();
     check = validateInput(input);
   }
+  console.log(`player picks: ${input}`);
   return input;
 }
 // validate input
@@ -45,6 +47,7 @@ function validateInput(choice) {
 // computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
+  console.log(`computer picks: ${choices[randomNum]}`);
   return choices[randomNum];
 }
 
@@ -64,11 +67,11 @@ function checkWinner(p, c) {
 }
 const playerWins = () => {
   player++;
-  return 'you beat the computer!';
+  return 'you win this round! \\ (•◡•) /';
 };
 const playerLoses = () => {
   computer++;
-  return 'you lost, computer wins!';
+  return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
 };
 
 // game
