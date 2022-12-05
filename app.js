@@ -27,8 +27,9 @@ function getPlayerChoice() {
     }
     check = validateInput(input);
   }
-  console.log(`player picks: ${input}`);
+  return input.toLowerCase();
 }
+console.log(`player picks: ${playerSelection}`);
 // validate input
 function validateInput(choice) {
   return choices.includes(choice);
