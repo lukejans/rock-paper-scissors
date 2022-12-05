@@ -1,5 +1,7 @@
 // variables
 const choices = ['rock', 'paper', 'scissors'];
+let player = 0;
+let computer = 0;
 
 // game
 function game() {
@@ -50,17 +52,25 @@ function getComputerChoice() {
 // rules
 function checkWinner(p, c) {
   if (p === c) {
-    return 'tie';
+    return 'round ends in a draw...';
   } else if (
     (p === 'rock' && c === 'scissors') ||
     (p === 'paper' && c === 'rock') ||
     (p === 'scissors' && c === 'paper')
   ) {
-    return 'player';
+    return playerWins();
   } else {
-    return 'computer';
+    return playerLoses();
   }
 }
+const playerWins = () => {
+  player++;
+  return 'you beat the computer!';
+};
+const playerLoses = () => {
+  computer++;
+  return 'you lost, computer wins!';
+};
 
 // game
 game();
