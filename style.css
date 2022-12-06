@@ -131,6 +131,6 @@ button:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url(/images/batthern.png);
+  background-image: url(./images/batthern.png);
   opacity: 0.25;
 }
