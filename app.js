@@ -11,6 +11,8 @@ function game() {
       console.log('-------------------');
       player = 0;
       computer = 0;
+      playRound();
+      console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
     } else {
       playRound();
       console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
@@ -100,3 +102,4 @@ const playerLoses = () => {
 };
 
 // start button
+document.getElementById('btn').addEventListener('click', game);
