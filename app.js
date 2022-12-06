@@ -5,7 +5,7 @@ let computer = 0;
 
 // game
 function game() {
-  for (player, computer; player < 5, computer < 5; ) {
+  for (player, computer; player <= 5, computer <= 5; ) {
     if (player == 5 || computer == 5) {
       console.log(winnerText());
       console.log('-------------------');
