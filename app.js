@@ -3,8 +3,6 @@ const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
 
-// start button
-
 // game
 function game() {
   for (player, computer; player < 5, computer < 5; ) {
@@ -99,3 +97,5 @@ const playerLoses = () => {
   computer++;
   return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
 };
+
+// start button

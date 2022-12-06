@@ -1,22 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: monospace;
-  font-size: large;
   color: aliceblue;
   background-color: rgb(40, 39, 42);
+  min-height: 100vh;
+}
+.container {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+button,
+h1 {
+  font-family: 'Press Start 2P', sans-serif;
+  color: rgb(123, 71, 255);
+  text-align: center;
+  text-shadow: 0 1px 0 rgb(145, 255, 86), 0 2px 0 rgb(145, 255, 86),
+    0 3px 0 rgb(145, 255, 86), 0 4px 0 rgb(255, 210, 86),
+    0 5px 0 rgb(255, 210, 86), 0 6px 0 rgb(255, 210, 86),
+    0 7px 0 rgb(255, 210, 86), 0 8px 0 rgb(255, 210, 86),
+    0 9px 0 rgb(255, 210, 86), 0 10px 0 rgb(255, 210, 86),
+    0 11px 0 rgb(255, 210, 86), 0 12px 0 rgb(255, 210, 86);
 }
 h1 {
-  text-align: center;
+  font-size: 32px;
+  padding: 10px 0;
+  line-height: 50px;
+  letter-spacing: 2px;
 }
-h2 {
-  font-size: small;
+
+.rules {
+  font-family: 'Fira Code', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: rgb(145, 255, 86);
+  margin-top: 20px;
+}
+.des-txt strong {
+  color: rgb(145, 255, 86);
   text-transform: uppercase;
 }
-button {
-  font-weight: bold;
-  color: rgb(109, 103, 221);
-  background-color: rgb(43, 43, 43);
-  width: 100px;
+.des-txt b {
+  color: rgb(123, 71, 255);
+}
+.des-txt p {
+  padding: 20px;
+  line-height: 15px;
+}
+.des-txt {
+  border: 2px solid rgb(123, 71, 255);
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+}
+
+.command,
+.option {
+  max-height: 25px;
+}
+.shift {
+  max-height: 80px;
+}
+.j-key {
+  color: black;
+  font-family: 'Poppins';
+  font-weight: bolder;
+  font-size: 16px;
+}
+.keys {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 0 10px 0;
+}
+.box1 {
+  width: 40px;
   height: 40px;
-  border: 1px solid rgb(76, 76, 76);
-  border-radius: 3px;
+}
+.box2 {
+  height: 40px;
+}
+.box3 {
+  width: 150px;
+  height: 45px;
+}
+.box1,
+.box2 {
+  background-color: rgb(123, 71, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid rgb(146, 105, 249);
+}
+.play {
+  padding-bottom: 20px;
+}
+button {
+  padding-bottom: 10px;
+  background-color: rgb(69, 69, 70);
+  border-color: rgb(146, 105, 249);
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(17, 17, 17);
+  border-color: rgb(145, 255, 86);
+}
+
+.background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgb(123, 71, 255);
+}
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/images/batthern.png);
+  opacity: 0.25;
 }
