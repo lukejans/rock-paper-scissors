@@ -6,14 +6,15 @@ let computer = 0;
 // game
 function game() {
   for (player, computer; player < 5, computer < 5; ) {
-    playRound();
-    console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
-  }
-  if (player == 5 || computer == 5) {
-    console.log(winnerText());
-    console.log('-------------------');
-    player = 0;
-    computer = 0;
+    if (player == 5 || computer == 5) {
+      console.log(winnerText());
+      console.log('-------------------');
+      player = 0;
+      computer = 0;
+    } else {
+      playRound();
+      console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
+    }
   }
 }
 // win / loose text
