@@ -2,7 +2,9 @@
 const mainContainer = document.querySelector('.main-container');
 const gameContainer = document.querySelector('.game-container');
 const startButton = document.getElementById('start-game-btn');
-const restartButton = document.getElementById('restart-btn');
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
@@ -99,9 +101,4 @@ function checkWinner(p, c) {
 startButton.addEventListener('click', () => {
   gameContainer.classList.remove('hidden');
   mainContainer.style.display = 'none';
-});
-
-restartButton.addEventListener('click', () => {
-  gameContainer.classList.add('hidden');
-  mainContainer.style.display = 'flex';
 });
