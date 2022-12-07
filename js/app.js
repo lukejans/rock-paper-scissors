@@ -92,4 +92,4 @@ function checkWinner(p, c) {
 }
 
 // start button
-document.getElementById('btn').addEventListener('click', game);
+// document.getElementById('btn').addEventListener('click', game);

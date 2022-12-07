@@ -15,23 +15,23 @@ body {
   align-items: center;
   gap: 15px;
 }
-button,
+a,
 h1 {
   font-family: 'Press Start 2P', sans-serif;
   color: rgb(123, 71, 255);
   text-align: center;
-  text-shadow: 0 1px 0 rgb(145, 255, 86), 0 2px 0 rgb(145, 255, 86),
-    0 3px 0 rgb(145, 255, 86), 0 4px 0 rgb(255, 210, 86),
-    0 5px 0 rgb(255, 210, 86), 0 6px 0 rgb(255, 210, 86),
-    0 7px 0 rgb(255, 210, 86), 0 8px 0 rgb(255, 210, 86),
-    0 9px 0 rgb(255, 210, 86), 0 10px 0 rgb(255, 210, 86),
-    0 11px 0 rgb(255, 210, 86), 0 12px 0 rgb(255, 210, 86);
 }
 h1 {
   font-size: 32px;
   padding: 10px 0;
   line-height: 50px;
   letter-spacing: 2px;
+  text-shadow: 0 1px 0 rgb(145, 255, 86), 0 2px 0 rgb(145, 255, 86),
+    0 3px 0 rgb(145, 255, 86), 0 4px 0 rgb(145, 255, 86),
+    0 5px 0 rgb(145, 255, 86), 0 6px 0 rgb(255, 210, 86),
+    0 7px 0 rgb(255, 210, 86), 0 8px 0 rgb(255, 210, 86),
+    0 9px 0 rgb(255, 210, 86), 0 10px 0 rgb(255, 210, 86),
+    0 11px 0 rgb(255, 210, 86), 0 12px 0 rgb(255, 210, 86);
 }
 
 .rules {
@@ -105,15 +105,29 @@ h1 {
 .play {
   padding-bottom: 20px;
 }
-button {
-  padding-bottom: 10px;
-  background-color: rgb(69, 69, 70);
-  border-color: rgb(146, 105, 249);
+#play-btn {
+  display: block;
+  min-width: 150px;
+  padding: 10px 0 16px 0;
+  background-color: rgb(56, 56, 56);
+  border: 2px solid rgb(146, 105, 249);
   cursor: pointer;
 }
-button:hover {
+#play-btn:hover {
   background-color: rgb(17, 17, 17);
   border-color: rgb(145, 255, 86);
+}
+a {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgb(145, 255, 86), 0 2px 0 rgb(145, 255, 86),
+    0 3px 0 rgb(145, 255, 86), 0 4px 0 rgb(255, 210, 86),
+    0 5px 0 rgb(255, 210, 86), 0 6px 0 rgb(255, 210, 86);
+}
+a:hover {
+  color: rgb(145, 255, 86);
+  text-shadow: 0 1px 0 rgb(123, 71, 255), 0 2px 0 rgb(123, 71, 255),
+    0 3px 0 rgb(123, 71, 255), 0 4px 0 rgb(123, 71, 255),
+    0 5px 0 rgb(123, 71, 255), 0 6px 0 rgb(123, 71, 255);
 }
 
 .background {
