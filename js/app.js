@@ -1,4 +1,8 @@
 // variables
+const mainContainer = document.querySelector('.main-container');
+const gameContainer = document.querySelector('.game-container');
+const startButton = document.getElementById('start-game-btn');
+const restartButton = document.getElementById('restart-btn');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
@@ -91,12 +95,7 @@ function checkWinner(p, c) {
   }
 }
 
-// start button
-const mainContainer = document.querySelector('.main-container');
-const gameContainer = document.querySelector('.game-container');
-const startButton = document.getElementById('start-game-btn');
-const restartButton = document.getElementById('restart-btn');
-
+// start / restart button btn modals
 startButton.addEventListener('click', () => {
   gameContainer.classList.remove('hidden');
   mainContainer.style.display = 'none';

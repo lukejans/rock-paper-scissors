@@ -123,11 +123,8 @@ h1 {
   background-color: rgb(17, 17, 17);
   border-color: rgb(145, 255, 86);
 }
-.restart {
-  margin-top: 20px;
-}
 #restart-btn {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .play a {
   text-decoration: none;
