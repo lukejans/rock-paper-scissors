@@ -5,25 +5,25 @@ let computer = 0;
 
 // game
 function game() {
-  for (player, computer; player <= 4, computer <= 4; ) {
-    playRound();
-    console.log(`scores: --->  player: ${player} -- computer: ${computer}`);
+  for (player, computer; player !== 5, computer !== 5; ) {
+    if (player <= 4 && computer <= 4) {
+      playRound();
+      console.log(`score: ---> player: ${player} -- computer: ${computer}`);
+      if (player == 5) {
+        console.log(
+          'Congratulations! You won the game \n -----------------------'
+        );
+      } else if (computer == 5) {
+        console.log('Oops! You lost this time \n -----------------------');
+      }
+    } else {
+      player = 5;
+      computer = 5;
+    }
   }
-  if (player == 5 || computer == 5) {
-    console.log(winnerText());
-    console.log('-------------------');
-    player = 0;
-    computer = 0;
-  }
+  player = 0;
+  computer = 0;
 }
-// win / loose text
-const winnerText = () => {
-  if (player > computer) {
-    return 'Congratulations! You won the game';
-  } else {
-    return 'Oops! You lost this time';
-  }
-};
 
 // round
 function playRound(playerSelection, computerSelection) {
@@ -83,20 +83,13 @@ function checkWinner(p, c) {
     (p === 'paper' && c === 'rock') ||
     (p === 'scissors' && c === 'paper')
   ) {
-    return playerWins();
+    player++;
+    return 'you win this round! \\ (•◡•) /';
   } else {
-    return playerLoses();
+    computer++;
+    return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
   }
 }
-// win tracker
-const playerWins = () => {
-  player++;
-  return 'you win this round! \\ (•◡•) /';
-};
-const playerLoses = () => {
-  computer++;
-  return 'you lost, computer wins this round! ¯\\_(ツ)_/¯';
-};
 
 // start button
 document.getElementById('btn').addEventListener('click', game);
