@@ -92,4 +92,17 @@ function checkWinner(p, c) {
 }
 
 // start button
-// document.getElementById('btn').addEventListener('click', game);
+const mainContainer = document.querySelector('.main-container');
+const gameContainer = document.querySelector('.game-container');
+const startButton = document.getElementById('start-game-btn');
+const restartButton = document.getElementById('restart-btn');
+
+startButton.addEventListener('click', () => {
+  gameContainer.classList.remove('hidden');
+  mainContainer.style.display = 'none';
+});
+
+restartButton.addEventListener('click', () => {
+  gameContainer.classList.add('hidden');
+  mainContainer.style.display = 'flex';
+});

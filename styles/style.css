@@ -105,6 +105,9 @@ h1 {
 .play {
   padding-bottom: 20px;
 }
+#restart-btn,
+#home-btn,
+#start-game-btn,
 #play-btn {
   display: block;
   min-width: 150px;
@@ -113,9 +116,18 @@ h1 {
   border: 2px solid rgb(146, 105, 249);
   cursor: pointer;
 }
+#restart-btn:hover,
+#home-btn:hover,
+#start-game-btn:hover,
 #play-btn:hover {
   background-color: rgb(17, 17, 17);
   border-color: rgb(145, 255, 86);
+}
+.restart {
+  margin-top: 20px;
+}
+#restart-btn {
+  margin-top: 20px;
 }
 .play a {
   text-decoration: none;
@@ -147,4 +159,8 @@ h1 {
   left: 0;
   background-image: url(../images/batthern.png);
   opacity: 0.25;
+}
+.des-btn {
+  display: flex;
+  gap: 15px;
 }

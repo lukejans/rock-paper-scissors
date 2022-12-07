@@ -63,7 +63,7 @@
 
 .btn-img {
   height: 50px;
-  padding: 5px;
+  padding: 7px;
 }
 
 .box4 {
@@ -100,4 +100,19 @@ svg:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.btn-container p {
+  padding: 0 0 10px 0;
+}
+.main-container {
+  display: flex;
+}
+.hidden {
+  display: none;
 }
