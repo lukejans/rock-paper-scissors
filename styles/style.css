@@ -15,7 +15,7 @@ body {
   align-items: center;
   gap: 15px;
 }
-a,
+.play a,
 h1 {
   font-family: 'Press Start 2P', sans-serif;
   color: rgb(123, 71, 255);
@@ -117,13 +117,13 @@ h1 {
   background-color: rgb(17, 17, 17);
   border-color: rgb(145, 255, 86);
 }
-a {
+.play a {
   text-decoration: none;
   text-shadow: 0 1px 0 rgb(145, 255, 86), 0 2px 0 rgb(145, 255, 86),
     0 3px 0 rgb(145, 255, 86), 0 4px 0 rgb(255, 210, 86),
     0 5px 0 rgb(255, 210, 86), 0 6px 0 rgb(255, 210, 86);
 }
-a:hover {
+.play a:hover {
   color: rgb(145, 255, 86);
   text-shadow: 0 1px 0 rgb(123, 71, 255), 0 2px 0 rgb(123, 71, 255),
     0 3px 0 rgb(123, 71, 255), 0 4px 0 rgb(123, 71, 255),
