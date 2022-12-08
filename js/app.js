@@ -39,7 +39,7 @@ function game() {
     pAllTime++;
     wlRatio = winLossRatio();
     console.log(`win / loss ratio: ${wlRatio}%`);
-    console.log(' ');
+    winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   } else if (computer == 5) {
     console.log('Oops! You lost this time');
     resultDis.innerHTML = 'Oops! You lost this time';
@@ -50,7 +50,6 @@ function game() {
     cAllTime++;
     wlRatio = winLossRatio();
     console.log(`win / loss ratio: ${wlRatio}%`);
-    console.log(' ');
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   }
 }
@@ -106,7 +105,7 @@ function checkWinner(p, c) {
 
 // win loss ratio
 function winLossRatio() {
-  return (pAllTime / gamesPlayed) * 100;
+  return Math.floor((pAllTime / gamesPlayed) * 100);
 }
 
 // old get player choice method
