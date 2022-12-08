@@ -15,7 +15,9 @@ let compChoice;
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     playerChoice = button.id;
+    console.log(' ');
     console.log(`player picks: ${playerChoice}`);
+    playerDis.innerHTML = `p: ${playerChoice}`;
     compChoice = getComputerChoice();
     game();
   });
@@ -25,8 +27,11 @@ buttons.forEach((button) => {
 function game() {
   playRound(playerChoice, compChoice);
   console.log(`score: ---> player: ${player} -- computer: ${computer}`);
+  playerDisScore.innerHTML = `player: ${player}`;
+  compDisScore.innerHTML = `computer: ${computer}`;
   if (player == 5) {
     console.log('Congratulations! You won the game');
+    resultDis.innerHTML = 'Congratulations! You won the game';
     player = 0;
     computer = 0;
     round = 0;
@@ -37,6 +42,7 @@ function game() {
     console.log(' ');
   } else if (computer == 5) {
     console.log('Oops! You lost this time');
+    resultDis.innerHTML = 'Oops! You lost this time';
     player = 0;
     computer = 0;
     round = 0;
@@ -45,6 +51,7 @@ function game() {
     wlRatio = winLossRatio();
     console.log(`win / loss ratio: ${wlRatio}%`);
     console.log(' ');
+    winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   }
 }
 
@@ -53,18 +60,22 @@ function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
   round++;
   console.log(`round number: ${round}`);
+  roundDis.innerHTML = `round number: ${round}`;
   if (winner == 'win') {
     console.log(
       `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`
     );
+    resultDis.innerHTML = `player wins this round! \\ (•◡•) /<span class="cursor2">_</span>`;
   } else if (winner == 'lose') {
     console.log(
       `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`
     );
+    resultDis.innerHTML = `computer wins this round! ¯\\_(ツ)_/¯<span class="cursor2">_</span>`;
   } else {
     console.log(
       `${playerSelection} vs. ${computerSelection} results in a round draw...`
     );
+    resultDis.innerHTML = `round ends in a draw...<span class="cursor2">_</span>`;
   }
 }
 
@@ -72,6 +83,7 @@ function playRound(playerSelection, computerSelection) {
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
   console.log(`computer picks: ${choices[randomNum]}`);
+  compDis.innerHTML = `c: ${choices[randomNum]}`;
   return choices[randomNum];
 }
 

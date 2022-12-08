@@ -10,13 +10,16 @@ startButton.addEventListener('click', () => {
   gameDisplay.classList.remove('hidden');
   document
     .getElementById('window')
-    .getElementsByClassName('cursor1')[0].innerHTML = '';
-  document
-    .getElementById('window')
     .getElementsByClassName(
       'inline'
-    )[0].innerHTML = `root@restartGame: Press &lt;RESTART&gt; to reset game session<span
-    class="cursor1"
-    >_</span
-  >`;
+    )[0].innerHTML = `root@restartGame: Press &lt;RESTART&gt; to reset game session`;
 });
+
+// statistics / analytics
+const playerDis = document.getElementById('d-pc');
+const compDis = document.getElementById('d-cc');
+const playerDisScore = document.getElementById('d-ps');
+const compDisScore = document.getElementById('d-cs');
+const roundDis = document.getElementById('d-r');
+const winLossDis = document.getElementById('d-w-l');
+const resultDis = document.getElementById('result-txt');
