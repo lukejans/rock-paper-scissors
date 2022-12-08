@@ -32,33 +32,37 @@
       <section class="des-txt">
         <div id="terminal">
           <div id="window">
-            root@playGame: Press &lt;PLAY&gt; to start new game<span
-              class="cursor1"
-              >_</span
-            >
-            <section id="test">
-              <div class="statistics">
-                <div>
-                  <p>&lt;CHOICE&gt;</p>
-                  <p>p: scissors</p>
-                  <p>c: rock</p>
+            <h4 class="inline">
+              root@playGame: Press &lt;PLAY&gt; to start new game<span
+                class="cursor1"
+                >_</span
+              >
+            </h4>
+            <div class="hidden rm-hide">
+              <section id="game-display">
+                <div class="statistics">
+                  <div>
+                    <p>&lt;CHOICE&gt;</p>
+                    <p id="d-pc">p: scissors</p>
+                    <p id="d-cc">c: rock</p>
+                  </div>
+                  <div>
+                    <p>&lt;SCORE&gt;</p>
+                    <p id="d-player">player: 5</p>
+                    <p id="d-comp">computer: 4</p>
+                  </div>
+                  <div>
+                    <p>&lt;STATS&gt;</p>
+                    <p id="d-round">round: 5</p>
+                    <p id="d-win-loss">w/l r: 100%</p>
+                  </div>
                 </div>
-                <div>
-                  <p>&lt;SCORE&gt;</p>
-                  <p>player: 5</p>
-                  <p>computer: 4</p>
+                <div class="result">
+                  <p>&lt;RESULT&gt;</p>
+                  <p>Press to clear<span class="cursor2">_</span></p>
                 </div>
-                <div>
-                  <p>&lt;STATS&gt;</p>
-                  <p>round: 5</p>
-                  <p>w/l r: 100%</p>
-                </div>
-              </div>
-              <div class="result">
-                <p>&lt;RESULT&gt;</p>
-                <p>Press to clear<span class="cursor2">_</span></p>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
       </section>
