@@ -31,7 +31,8 @@ function game() {
   compDisScore.innerHTML = `computer: ${computer}`;
   if (player == 5) {
     console.log('Congratulations! You won the game');
-    resultDis.innerHTML = 'Congratulations! You won the game';
+    resultDis.innerHTML =
+      'Congratulations! You won the game<span class="cursor2">_</span>';
     player = 0;
     computer = 0;
     round = 0;
@@ -42,7 +43,8 @@ function game() {
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   } else if (computer == 5) {
     console.log('Oops! You lost this time');
-    resultDis.innerHTML = 'Oops! You lost this time';
+    resultDis.innerHTML =
+      'Oops! You lost this time<span class="cursor2">_</span>';
     player = 0;
     computer = 0;
     round = 0;
