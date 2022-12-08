@@ -31,7 +31,7 @@ let par = document.getElementById('par'),
   temp = '';
 
 function typeTxt() {
-  start = setInterval(write, 400);
+  start = setInterval(write, 90);
 }
 
 function write() {
