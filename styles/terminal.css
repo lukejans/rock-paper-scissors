@@ -6,7 +6,7 @@
   left: 0;
 
   width: 446px;
-  height: 260px;
+  height: 300px;
   margin: 0 auto;
 
   background: #d7d7d7;
@@ -17,13 +17,10 @@
   position: absolute;
   top: 10px;
   left: 10px;
-
   width: 426px;
-  height: 240px;
-
+  height: 280px;
   padding: 10px 20px;
   background: #464646;
-
   font-size: 15px;
   color: rgb(145, 255, 86);
 }
@@ -31,6 +28,29 @@
 #hackerName,
 #clear {
   opacity: 0;
+}
+#test {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 385px;
+}
+#test p {
+  padding: 15px 0 0 0;
+}
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 385px;
+  height: 110px;
+  border: 2px solid rgb(145, 255, 86);
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+.result {
+  margin-left: 13px;
 }
 
 .cursor1,

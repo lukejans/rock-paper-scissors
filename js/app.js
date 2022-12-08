@@ -3,6 +3,11 @@ const buttons = document.querySelectorAll('.btn');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
+let round = 0;
+let gamesPlayed = 0;
+let pAllTime = 0;
+let cAllTime = 0;
+let wlRatio = 0;
 let playerChoice;
 let compChoice;
 
@@ -21,19 +26,33 @@ function game() {
   playRound(playerChoice, compChoice);
   console.log(`score: ---> player: ${player} -- computer: ${computer}`);
   if (player == 5) {
-    console.log('Congratulations! You won the game \n -----------------------');
+    console.log('Congratulations! You won the game');
     player = 0;
     computer = 0;
+    round = 0;
+    gamesPlayed++;
+    pAllTime++;
+    wlRatio = winLossRatio();
+    console.log(`win / loss ratio: ${wlRatio}%`);
+    console.log(' ');
   } else if (computer == 5) {
-    console.log('Oops! You lost this time \n -----------------------');
+    console.log('Oops! You lost this time');
     player = 0;
     computer = 0;
+    round = 0;
+    gamesPlayed++;
+    cAllTime++;
+    wlRatio = winLossRatio();
+    console.log(`win / loss ratio: ${wlRatio}%`);
+    console.log(' ');
   }
 }
 
 // round
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
+  round++;
+  console.log(`round number: ${round}`);
   if (winner == 'win') {
     console.log(
       `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`
@@ -71,6 +90,11 @@ function checkWinner(p, c) {
     computer++;
     return 'lose';
   }
+}
+
+// win loss ratio
+function winLossRatio() {
+  return (pAllTime / gamesPlayed) * 100;
 }
 
 // old get player choice method
