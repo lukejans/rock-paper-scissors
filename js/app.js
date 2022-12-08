@@ -1,5 +1,6 @@
 // variables
 const buttons = document.querySelectorAll('.btn');
+const hideText = document.getElementById('par');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
@@ -29,10 +30,14 @@ function game() {
   console.log(`score: ---> player: ${player} -- computer: ${computer}`);
   playerDisScore.innerHTML = `player: ${player}`;
   compDisScore.innerHTML = `computer: ${computer}`;
+  hideText.style.display = 'none';
   if (player == 5) {
     console.log('Congratulations! You won the game');
-    resultDis.innerHTML =
-      'Congratulations! You won the game<span class="cursor2">_</span>';
+    text = 'Congratulations! You won the game';
+    hideText.style.display = 'inline';
+    resultDis.innerHTML = '';
+
+    typeTxt();
     player = 0;
     computer = 0;
     round = 0;
@@ -43,8 +48,10 @@ function game() {
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   } else if (computer == 5) {
     console.log('Oops! You lost this time');
-    resultDis.innerHTML =
-      'Oops! You lost this time<span class="cursor2">_</span>';
+    text = 'Oops! You lost this time';
+    hideText.style.display = 'inline';
+    resultDis.innerHTML = '';
+    typeTxt();
     player = 0;
     computer = 0;
     round = 0;
@@ -66,17 +73,26 @@ function playRound(playerSelection, computerSelection) {
     console.log(
       `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`
     );
-    resultDis.innerHTML = `player wins this round! \\ (•◡•) /<span class="cursor2">_</span>`;
+    resultDis.innerHTML = `player wins this round! \\ (•◡•) / <span
+    class="cursor1"
+    >_</span
+  >`;
   } else if (winner == 'lose') {
     console.log(
       `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`
     );
-    resultDis.innerHTML = `computer wins this round! ¯\\_(ツ)_/¯<span class="cursor2">_</span>`;
+    resultDis.innerHTML = `computer wins this round! ¯\\_(ツ)_/¯ <span
+    class="cursor1"
+    >_</span
+  >`;
   } else {
     console.log(
       `${playerSelection} vs. ${computerSelection} results in a round draw...`
     );
-    resultDis.innerHTML = `round ends in a draw...<span class="cursor2">_</span>`;
+    resultDis.innerHTML = `round ends in a draw... <span
+    class="cursor1"
+    >_</span
+  >`;
   }
 }
 

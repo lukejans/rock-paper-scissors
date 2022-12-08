@@ -22,3 +22,35 @@ startButton.addEventListener('click', () => {
       'inline'
     )[0].innerHTML = `root@restartGame: Press &lt;RESTART&gt; to reset game session`;
 });
+
+// type effect
+let par = document.getElementById('par'),
+  text,
+  start,
+  i = 0,
+  temp = '';
+
+function typeTxt() {
+  start = setInterval(write, 400);
+}
+
+function write() {
+  if (i < text.length) {
+    temp += text[i];
+    written();
+    par.textContent += ' ';
+    i++;
+  } else {
+    clearInterval(start);
+    written();
+  }
+}
+
+function written() {
+  let k = 0;
+  par.textContent = '';
+  do {
+    par.textContent += temp[k];
+    k++;
+  } while (k < i);
+}
