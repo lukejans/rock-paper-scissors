@@ -161,3 +161,20 @@ h1 {
   display: flex;
   gap: 15px;
 }
+.pad-b {
+  padding-bottom: 15px;
+}
+.home-play-btn {
+  width: 450px;
+}
+
+/* responsive design */
+@media only screen and (max-width: 500px) {
+  .pad-b {
+    display: none;
+  }
+  .home-play-btn,
+  .des-txt {
+    max-width: 370px;
+  }
+}

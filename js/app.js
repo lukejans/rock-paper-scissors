@@ -28,8 +28,8 @@ buttons.forEach((button) => {
 function game() {
   playRound(playerChoice, compChoice);
   console.log(`score: ---> player: ${player} -- computer: ${computer}`);
-  playerDisScore.innerHTML = `player: ${player}`;
-  compDisScore.innerHTML = `computer: ${computer}`;
+  playerDisScore.innerHTML = `p: ${player}`;
+  compDisScore.innerHTML = `c: ${computer}`;
   hideText.style.display = 'none';
   if (player == 5) {
     console.log('Congratulations! You won the game');
@@ -67,7 +67,7 @@ function game() {
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
   round++;
-  console.log(`round number: ${round}`);
+  console.log(`round: ${round}`);
   roundDis.innerHTML = `round number: ${round}`;
   if (winner == 'win') {
     console.log(
