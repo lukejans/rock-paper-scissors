@@ -54,3 +54,13 @@ function getHackerName() {
   var secondName = secondNames[Math.floor(Math.random() * secondNames.length)];
   return firstName + ' ' + secondName;
 }
+
+// start button / btn modals
+const mainContainer = document.querySelector('.main-container');
+const gameContainer = document.querySelector('.game-container');
+const startButton = document.getElementById('start-game-btn');
+
+startButton.addEventListener('click', () => {
+  gameContainer.classList.remove('hidden');
+  mainContainer.style.display = 'none';
+});
