@@ -42,13 +42,13 @@ function game() {
     endOfGame();
     phrase = 'Congratulations! You won the game!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
-    typeReset();
+    typeWriter();
   } else if (computer == 5) {
     cAllTime++;
     endOfGame();
     phrase = 'Oops! You lost this time!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
-    typeReset();
+    typeWriter();
   }
 }
 // helper functions
@@ -59,10 +59,6 @@ function endOfGame() {
   round = 0;
   gamesPlayed++;
   wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
-}
-
-function typeReset() {
-  typeWriter();
 }
 // typewriter effect
 function typeWriter() {
