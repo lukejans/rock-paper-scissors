@@ -163,8 +163,7 @@ button {
     width: 300px;
     height: 110px;
   }
-  #par,
-  #result--txt {
-    font-size: 10px;
+  .result {
+    width: 275px;
   }
 }

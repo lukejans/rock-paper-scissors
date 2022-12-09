@@ -1,6 +1,5 @@
 // variables
 const buttons = document.querySelectorAll('.btn');
-const hideText = document.getElementById('par');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
@@ -11,6 +10,14 @@ let cAllTime = 0;
 let wlRatio = 0;
 let playerChoice;
 let compChoice;
+// statistics / analytics
+const playerDis = document.getElementById('d-pc');
+const compDis = document.getElementById('d-cc');
+const playerDisScore = document.getElementById('d-ps');
+const compDisScore = document.getElementById('d-cs');
+const roundDis = document.getElementById('d-r');
+const winLossDis = document.getElementById('d-w-l');
+const resultDis = document.getElementById('result-txt');
 
 // game buttons
 buttons.forEach((button) => {
@@ -27,40 +34,28 @@ buttons.forEach((button) => {
 // game
 function game() {
   playRound(playerChoice, compChoice);
-  console.log(`score: ---> player: ${player} -- computer: ${computer}`);
   playerDisScore.innerHTML = `p: ${player}`;
   compDisScore.innerHTML = `c: ${computer}`;
-  hideText.style.display = 'none';
   if (player == 5) {
-    console.log('Congratulations! You won the game');
-    text = 'Congratulations! You won the game';
-    hideText.style.display = 'inline';
-    resultDis.innerHTML = '';
-
-    typeTxt();
-    player = 0;
-    computer = 0;
-    round = 0;
-    gamesPlayed++;
     pAllTime++;
-    wlRatio = winLossRatio();
-    console.log(`win / loss ratio: ${wlRatio}%`);
+    endOfGame();
+    resultDis.innerHTML = 'Congratulations! You won the game!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   } else if (computer == 5) {
-    console.log('Oops! You lost this time');
-    text = 'Oops! You lost this time';
-    hideText.style.display = 'inline';
-    resultDis.innerHTML = '';
-    typeTxt();
-    player = 0;
-    computer = 0;
-    round = 0;
-    gamesPlayed++;
     cAllTime++;
-    wlRatio = winLossRatio();
-    console.log(`win / loss ratio: ${wlRatio}%`);
+    endOfGame();
+    resultDis.innerHTML = 'Oops! You lost this time!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   }
+}
+//
+function endOfGame() {
+  resultDis.innerHTML = '';
+  player = 0;
+  computer = 0;
+  round = 0;
+  gamesPlayed++;
+  wlRatio = winLossRatio();
 }
 
 // round
@@ -68,31 +63,13 @@ function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
   round++;
   console.log(`round: ${round}`);
-  roundDis.innerHTML = `round number: ${round}`;
+  roundDis.innerHTML = `round: ${round}`;
   if (winner == 'win') {
-    console.log(
-      `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`
-    );
-    resultDis.innerHTML = `player wins this round! \\ (•◡•) / <span
-    class="cursor1"
-    >_</span
-  >`;
+    resultDis.innerHTML = `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`;
   } else if (winner == 'lose') {
-    console.log(
-      `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`
-    );
-    resultDis.innerHTML = `computer wins this round! ¯\\_(ツ)_/¯ <span
-    class="cursor1"
-    >_</span
-  >`;
+    resultDis.innerHTML = `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`;
   } else {
-    console.log(
-      `${playerSelection} vs. ${computerSelection} results in a round draw...`
-    );
-    resultDis.innerHTML = `round ends in a draw... <span
-    class="cursor1"
-    >_</span
-  >`;
+    resultDis.innerHTML = `round ends in a draw...`;
   }
 }
 

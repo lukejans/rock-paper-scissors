@@ -3,15 +3,8 @@ const mainContainer = document.querySelector('.main-container');
 const gameContainer = document.querySelector('.game-container');
 const gameDisplay = document.querySelector('.rm-hide');
 const startButton = document.getElementById('start-game-btn');
-// statistics / analytics
-const playerDis = document.getElementById('d-pc');
-const compDis = document.getElementById('d-cc');
-const playerDisScore = document.getElementById('d-ps');
-const compDisScore = document.getElementById('d-cs');
-const roundDis = document.getElementById('d-r');
-const winLossDis = document.getElementById('d-w-l');
-const resultDis = document.getElementById('result-txt');
 
+// start button
 startButton.addEventListener('click', () => {
   gameContainer.classList.remove('hidden');
   mainContainer.style.display = 'none';
@@ -24,33 +17,40 @@ startButton.addEventListener('click', () => {
 });
 
 // type effect
-let par = document.getElementById('par'),
-  text,
-  start,
-  i = 0,
-  temp = '';
 
-function typeTxt() {
-  start = setInterval(write, 90);
-}
+// html
+// <span id="par"></span>
+// <span class="cursor2">_</span>
 
-function write() {
-  if (i < text.length) {
-    temp += text[i];
-    written();
-    par.textContent += ' ';
-    i++;
-  } else {
-    clearInterval(start);
-    written();
-  }
-}
+// js
+// const hideText = document.getElementById('par');
+// let par = document.getElementById('par');
+// let text;
+// let start;
+// let i = 0;
+// let temp = '';
 
-function written() {
-  let k = 0;
-  par.textContent = '';
-  do {
-    par.textContent += temp[k];
-    k++;
-  } while (k < i);
-}
+// function typeTxt() {
+//   start = setInterval(write, 90);
+// }
+
+// function write() {
+//   if (i < text.length) {
+//     temp += text[i];
+//     written();
+//     par.textContent += ' ';
+//     i++;
+//   } else {
+//     clearInterval(start);
+//     written();
+//   }
+// }
+
+// function written() {
+//   let k = 0;
+//   par.textContent = '';
+//   do {
+//     par.textContent += temp[k];
+//     k++;
+//   } while (k < i);
+// }
