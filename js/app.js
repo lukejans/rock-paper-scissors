@@ -72,7 +72,6 @@ function typeWriter() {
     currentPhrase = [];
   }
 }
-
 // round
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
