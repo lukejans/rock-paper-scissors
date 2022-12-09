@@ -48,16 +48,14 @@ function game() {
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
   }
 }
-//
 function endOfGame() {
   resultDis.innerHTML = '';
   player = 0;
   computer = 0;
   round = 0;
   gamesPlayed++;
-  wlRatio = winLossRatio();
+  wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
 }
-
 // round
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
@@ -72,7 +70,6 @@ function playRound(playerSelection, computerSelection) {
     resultDis.innerHTML = `round ends in a draw...`;
   }
 }
-
 // get computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
@@ -80,7 +77,6 @@ function getComputerChoice() {
   compDis.innerHTML = `c: ${choices[randomNum]}`;
   return choices[randomNum];
 }
-
 // rules
 function checkWinner(p, c) {
   if (p === c) {
@@ -98,13 +94,9 @@ function checkWinner(p, c) {
   }
 }
 
-// win loss ratio
-function winLossRatio() {
-  return Math.floor((pAllTime / gamesPlayed) * 100);
-}
-
-// old get player choice method
-// choice validation
+// original method:
+//      get player choice
+//      validate input
 
 // // get player choice
 // function getPlayerChoice() {
