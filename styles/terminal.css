@@ -1,14 +1,13 @@
+/* game screen */
 #terminal {
   position: relative;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
   width: 446px;
   height: 300px;
   margin: 0 auto;
-
   background: #d7d7d7;
   font-family: 'Fira Code', monospace, sans-serif;
 }
@@ -32,12 +31,14 @@
 #game-display p {
   padding: 15px 0 0 0;
 }
+/* content on screen */
 .statistics {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
   width: 385px;
   height: 110px;
+  padding-bottom: 50px;
   border: 2px solid rgb(145, 255, 86);
   border-top: 0px;
   border-left: 0px;
@@ -46,14 +47,19 @@
 .result {
   margin-left: 13px;
 }
-
+.inline {
+  display: inline;
+}
+#re-head {
+  margin-bottom: 10px;
+}
+/* blinking cursor */
 .cursor1,
 .cursor2 {
   animation-duration: 1s;
   animation-name: blink;
   animation-iteration-count: infinite;
 }
-
 @keyframes blink {
   0% {
     opacity: 1;
@@ -68,18 +74,15 @@
     opacity: 0;
   }
 }
-
+/* rock paper scissors buttons */
 #game-btns {
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px;
+  padding: 15px;
 }
-
 .btn-img {
-  height: 50px;
-  padding: 7px;
+  height: 100%;
 }
-
 .box4 {
   display: flex;
   justify-content: center;
@@ -87,7 +90,6 @@
   width: 60px;
   height: 60px;
 }
-
 svg {
   fill: rgb(146, 105, 249);
   width: 60px;
@@ -96,12 +98,16 @@ svg {
 svg:hover {
   fill: rgb(145, 255, 86);
 }
-
 button:hover {
   background-color: rgb(17, 17, 17);
   border-color: rgb(145, 255, 86);
 }
-
+button {
+  background-color: rgb(56, 56, 56);
+  background-color: rgb(56, 56, 56);
+  border: 2px solid rgb(146, 105, 249);
+  cursor: pointer;
+}
 #rock,
 #paper,
 #scissors {
@@ -120,29 +126,19 @@ button:hover {
 .btn-container p {
   padding: 0 0 10px 0;
 }
+/* on off toggle */
 .main-container {
   display: flex;
 }
 .hidden {
   display: none;
 }
-button {
-  background-color: rgb(56, 56, 56);
-  background-color: rgb(56, 56, 56);
-  border: 2px solid rgb(146, 105, 249);
-  cursor: pointer;
-}
-.inline {
-  display: inline;
-}
-#re-head {
-  margin-bottom: 10px;
-}
+/* general buttons */
 .des-btn {
   display: flex;
   gap: 15px;
 }
-
+/* responsive */
 @media only screen and (max-width: 500px) {
   #terminal {
     width: 366px;
