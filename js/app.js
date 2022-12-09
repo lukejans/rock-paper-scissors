@@ -23,8 +23,6 @@ const resultDis = document.getElementById('result-txt');
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     playerChoice = button.id;
-    console.log(' ');
-    console.log(`player picks: ${playerChoice}`);
     playerDis.innerHTML = `p: ${playerChoice}`;
     compChoice = getComputerChoice();
     game();
@@ -60,7 +58,6 @@ function endOfGame() {
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
   round++;
-  console.log(`round: ${round}`);
   roundDis.innerHTML = `round: ${round}`;
   if (winner == 'win') {
     resultDis.innerHTML = `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`;
@@ -73,7 +70,6 @@ function playRound(playerSelection, computerSelection) {
 // get computer choice
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * choices.length);
-  console.log(`computer picks: ${choices[randomNum]}`);
   compDis.innerHTML = `c: ${choices[randomNum]}`;
   return choices[randomNum];
 }
