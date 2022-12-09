@@ -1,16 +1,9 @@
-// variables
+// game variables
 const buttons = document.querySelectorAll('.btn');
 const choices = ['rock', 'paper', 'scissors'];
 let player = 0;
 let computer = 0;
-let round = 0;
-let gamesPlayed = 0;
-let pAllTime = 0;
-let cAllTime = 0;
-let wlRatio = 0;
-let playerChoice;
-let compChoice;
-// statistics / analytics
+// statistic / analytic variables
 const playerDis = document.getElementById('d-pc');
 const compDis = document.getElementById('d-cc');
 const playerDisScore = document.getElementById('d-ps');
@@ -18,6 +11,17 @@ const compDisScore = document.getElementById('d-cs');
 const roundDis = document.getElementById('d-r');
 const winLossDis = document.getElementById('d-w-l');
 const resultDis = document.getElementById('result-txt');
+let round = 0;
+let gamesPlayed = 0;
+let pAllTime = 0;
+let cAllTime = 0;
+let wlRatio = 0;
+let playerChoice;
+let compChoice;
+// typewriter variables
+let phrase;
+let i = 0;
+let currentPhrase = [];
 
 // game buttons
 buttons.forEach((button) => {
@@ -28,7 +32,6 @@ buttons.forEach((button) => {
     game();
   });
 });
-
 // game
 function game() {
   playRound(playerChoice, compChoice);
@@ -37,15 +40,18 @@ function game() {
   if (player == 5) {
     pAllTime++;
     endOfGame();
-    resultDis.innerHTML = 'Congratulations! You won the game!';
+    phrase = 'Congratulations! You won the game!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
+    typeReset();
   } else if (computer == 5) {
     cAllTime++;
     endOfGame();
-    resultDis.innerHTML = 'Oops! You lost this time!';
+    phrase = 'Oops! You lost this time!';
     winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
+    typeReset();
   }
 }
+// helper functions
 function endOfGame() {
   resultDis.innerHTML = '';
   player = 0;
@@ -54,6 +60,23 @@ function endOfGame() {
   gamesPlayed++;
   wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
 }
+
+function typeReset() {
+  typeWriter();
+}
+// typewriter effect
+function typeWriter() {
+  resultDis.innerHTML = currentPhrase.join('');
+  if (i < phrase.length) {
+    currentPhrase.push(phrase[i]);
+    i++;
+    setTimeout(typeWriter, 50);
+  } else {
+    i = 0;
+    currentPhrase = [];
+  }
+}
+
 // round
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
