@@ -53,6 +53,9 @@ function endOfGame() {
   gamesPlayed++;
   wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
   winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
+  displayResets();
+}
+function displayResets() {
   gameContainer.classList.add('hidden');
   restartDisplay.classList.remove('hidden');
   document
@@ -61,16 +64,16 @@ function endOfGame() {
       'inline'
     )[0].innerHTML = `root@playGameAgain: Press &lt;PLAY AGAIN&gt;`;
 }
-function compWinTxt() {
-  cAllTime++;
-  resultDis.innerHTML = '';
-  phrase = 'Oops! You lost this time!';
-  typeWriter();
-}
 function playerWinTxt() {
   pAllTime++;
   resultDis.innerHTML = '';
   phrase = 'Congratulations! You won the game!';
+  typeWriter();
+}
+function compWinTxt() {
+  cAllTime++;
+  resultDis.innerHTML = '';
+  phrase = 'Oops! You lost this time!';
   typeWriter();
 }
 // typewriter effect
@@ -84,6 +87,11 @@ function typeWriter() {
     i = 0;
     currentPhrase = [];
   }
+}
+// win loss ratio
+function winLossRatio() {
+  wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
+  winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
 }
 // round
 function playRound(playerSelection, computerSelection) {
