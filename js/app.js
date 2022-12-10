@@ -38,27 +38,40 @@ function game() {
   playerDisScore.innerHTML = `p: ${player}`;
   compDisScore.innerHTML = `c: ${computer}`;
   if (player == 5) {
-    pAllTime++;
+    playerWinTxt();
     endOfGame();
-    phrase = 'Congratulations! You won the game!';
-    winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
-    typeWriter();
   } else if (computer == 5) {
-    cAllTime++;
+    compWinTxt();
     endOfGame();
-    phrase = 'Oops! You lost this time!';
-    winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
-    typeWriter();
   }
 }
 // helper functions
 function endOfGame() {
-  resultDis.innerHTML = '';
   player = 0;
   computer = 0;
   round = 0;
   gamesPlayed++;
   wlRatio = Math.floor((pAllTime / gamesPlayed) * 100);
+  winLossDis.innerHTML = `w/l r: ${wlRatio}%`;
+  gameContainer.classList.add('hidden');
+  restartDisplay.classList.remove('hidden');
+  document
+    .getElementById('window')
+    .getElementsByClassName(
+      'inline'
+    )[0].innerHTML = `root@playGameAgain: Press &lt;PLAY AGAIN&gt;`;
+}
+function compWinTxt() {
+  cAllTime++;
+  resultDis.innerHTML = '';
+  phrase = 'Oops! You lost this time!';
+  typeWriter();
+}
+function playerWinTxt() {
+  pAllTime++;
+  resultDis.innerHTML = '';
+  phrase = 'Congratulations! You won the game!';
+  typeWriter();
 }
 // typewriter effect
 function typeWriter() {

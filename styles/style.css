@@ -111,10 +111,11 @@ h1,
   border-color: rgb(145, 255, 86);
 }
 #restart-btn {
-  margin-top: 15px;
+  width: 450px;
 }
 /* responsive design */
 @media only screen and (max-width: 500px) {
+  #restart-btn,
   .home-play-btn,
   .des-txt {
     max-width: 370px;
