@@ -90,7 +90,7 @@ function typeWriter() {
   if (i < phrase.length) {
     currentPhrase.push(phrase[i]);
     i++;
-    setTimeout(typeWriter, 50);
+    setTimeout(typeWriter, 25);
   } else {
     i = 0;
     currentPhrase = [];
@@ -109,11 +109,14 @@ function winLossRatio() {
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
   if (winner == 'win') {
-    resultDis.innerHTML = `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`;
+    phrase = `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`;
+    typeWriter();
   } else if (winner == 'lose') {
-    resultDis.innerHTML = `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`;
+    phrase = `${computerSelection} beats ${playerSelection}, computer wins this round! ¯\\_(ツ)_/¯`;
+    typeWriter();
   } else {
-    resultDis.innerHTML = `round ends in a draw...`;
+    phrase = `round ends in a draw...`;
+    typeWriter();
   }
 }
 // get computer choice
