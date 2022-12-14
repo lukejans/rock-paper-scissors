@@ -100,8 +100,6 @@ function winLossRatio() {
 // round
 function playRound(playerSelection, computerSelection) {
   let winner = checkWinner(playerSelection, computerSelection);
-  round++;
-  roundDis.innerHTML = `round: ${round}`;
   if (winner == 'win') {
     resultDis.innerHTML = `${playerSelection} beats ${computerSelection}, player wins this round! \\ (•◡•) /`;
   } else if (winner == 'lose') {
@@ -118,6 +116,8 @@ function getComputerChoice() {
 }
 // rules
 function checkWinner(p, c) {
+  round++;
+  roundDis.innerHTML = `round: ${round}`;
   if (p === c) {
     return 'tie';
   } else if (
