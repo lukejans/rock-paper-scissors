@@ -26,6 +26,10 @@ let currentPhrase = [];
 // game buttons
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
+    // disable buttons
+    buttons.forEach((btn) => {
+      btn.setAttribute('disabled', 'true');
+    });
     playerChoice = button.id;
     playerDis.innerHTML = `p: ${playerChoice}`;
     compChoice = getComputerChoice();
@@ -90,6 +94,10 @@ function typeWriter() {
   } else {
     i = 0;
     currentPhrase = [];
+    // enable buttons
+    buttons.forEach((btn) => {
+      btn.removeAttribute('disabled');
+    });
   }
 }
 // win loss ratio
