@@ -37,6 +37,10 @@ function game() {
   playRound(playerChoice, compChoice);
   playerDisScore.innerHTML = `p: ${player}`;
   compDisScore.innerHTML = `c: ${computer}`;
+  whoWon();
+}
+// decision
+function whoWon() {
   if (player == 5) {
     playerWinTxt();
     endOfGame();
