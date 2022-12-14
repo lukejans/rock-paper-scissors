@@ -110,9 +110,9 @@ function playRound(playerSelection, computerSelection) {
 }
 // get computer choice
 function getComputerChoice() {
-  let randomNum = Math.floor(Math.random() * choices.length);
-  compDis.innerHTML = `c: ${choices[randomNum]}`;
-  return choices[randomNum];
+  const choice = choices[Math.floor(Math.random() * choices.length)];
+  compDis.innerHTML = `c: ${choice}`;
+  return choice;
 }
 // rules
 function checkWinner(p, c) {
